@@ -1,16 +1,9 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
-class Student(models.Model):
-    name = models.CharField(max_length=200)
-    group = models.ForeignKey('Group')
-
-    def __unicode__(self):
-        return self.name
-
-
-class Group(models.Model):
-    title = models.CharField(max_length=200)
+class Student(User):
+    group = models.CharField(max_length=200)
 
     def __unicode__(self):
-        return self.title
+        return self.username

@@ -3,11 +3,10 @@ from django.contrib import admin
 
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'bionic.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-
-    url(r'^$', 'coursera.views.students_view'),
-
+    url(r'^$', 'coursera.views.main'),
+    url(r'^register/', 'coursera.views.add_student_view'),
+    url(r'^register.do/', 'coursera.views.add_student_action'),
+    url(r'^login.do/', 'coursera.views.login_student_action'),
+    url(r'^students/', 'coursera.views.students_view'),
     url(r'^admin/', include(admin.site.urls)),
 )
